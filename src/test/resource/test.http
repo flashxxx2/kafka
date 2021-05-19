@@ -1,0 +1,20 @@
+POST http://localhost:8081/msg
+Content-Type: application/json
+
+{
+  "age":"43",
+  "name": "vasya",
+  "address":{
+    "country":"Russia",
+    "city":"Kazan",
+    "street":"Lenina",
+    "homeNumber":"12",
+    "flatNumber":"12"
+  }
+}
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
